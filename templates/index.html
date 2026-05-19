@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fake News Detection AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>📰 Fake News Detection AI</h1>
+
+            <p>
+                AI Powered Fake News Detection Dashboard
+            </p>
+
+            <form method="POST">
+
+                <textarea
+                    name="news"
+                    placeholder="Paste your news text here..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+
+                    Detect News
+
+                </button>
+
+            </form>
+
+            {% if prediction %}
+
+            <div class="result">
+
+                <h2>{{ prediction }}</h2>
+
+                <h3>
+                    Confidence :
+                    {{ confidence }}%
+                </h3>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>
