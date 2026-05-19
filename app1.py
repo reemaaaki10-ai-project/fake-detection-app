@@ -443,16 +443,10 @@ def load_tokenizer():
 
 @st.cache_resource
 def load_model():
-    model = TextClassifier()
-    model.load_state_dict(
-        torch.load("saved_models/text_classifier.pth", map_location=DEVICE)
-    )
-    model.to(DEVICE)
-    model.eval()
-    return model
+    return None
 
 tokenizer = load_tokenizer()
-model = load_model()
+model = None
 
 # =========================================================
 # PREDICTION FUNCTION — Boosted confidence 70%+
