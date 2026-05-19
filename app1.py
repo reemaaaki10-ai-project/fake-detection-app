@@ -459,7 +459,6 @@ def predict_news(text):
     is_real = False
 
     return prediction, confidence, is_real
-    )
     with torch.no_grad():
         logits = model(
             enc["input_ids"].to(DEVICE),
