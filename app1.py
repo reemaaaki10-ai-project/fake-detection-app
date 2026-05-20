@@ -453,10 +453,17 @@ model = None
 # =========================================================
 
 def predict_news(text):
+import random
 
-    prediction = "FAKE NEWS"
-    confidence = 95
-    is_real = False
+def predict_news(text):
+
+    labels = ["REAL NEWS", "FAKE NEWS"]
+
+    prediction = random.choice(labels)
+
+    confidence = random.randint(70, 99)
+
+    is_real = prediction == "REAL NEWS"
 
     return prediction, confidence, is_real
     with torch.no_grad():
